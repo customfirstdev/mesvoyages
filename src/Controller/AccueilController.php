@@ -18,7 +18,7 @@ class AccueilController extends AbstractController {
      * @var VisiteRepository
      */
     private $repository;
-  
+
     /**
      * 
      * @param VisiteRepository $repository
@@ -26,7 +26,7 @@ class AccueilController extends AbstractController {
     public function __construct(VisiteRepository $repository) {
         $this->repository = $repository;
     }
-    
+
     /**
      * @Route("/", name="accueil")
      * @return Response

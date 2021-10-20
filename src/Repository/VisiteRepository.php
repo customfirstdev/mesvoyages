@@ -25,12 +25,12 @@ class VisiteRepository extends ServiceEntityRepository
      * @param type $ordre
      * @return Visite[]
      */
-    public function findAllOrderBy($champ, $ordre): array{
-        return $this->createQueryBuilder('v')
-                ->orderBy('v.'.$champ, $ordre)
-                ->getQuery()
-                ->getResult();
-    }
+	public function findAllOrderBy($champ, $ordre): array{
+		return $this->createQueryBuilder('v')
+				->orderBy('v.'.$champ, $ordre)
+				->getQuery()
+				->getResult();
+	}
 
     /**
      * Enregistrements dont un champ est égal à une valeur

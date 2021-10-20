@@ -103,4 +103,5 @@ class AdminVoyagesController extends AbstractController{
             'visites' => $visites
         ]);
     }    
+    
 }

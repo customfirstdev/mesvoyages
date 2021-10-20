@@ -34,12 +34,12 @@ class VoyagesController extends AbstractController{
      * @param type $ordre
      * @return Response
      */
-    public function sort($champ, $ordre): Response{
-        $visites = $this->repository->findAllOrderBy($champ, $ordre);
-        return $this->render("pages/voyages.html.twig", [
-           'visites' => $visites 
-        ]);
-    }
+	public function sort($champ, $ordre): Response{
+		$visites = $this->repository->findAllOrderBy($champ, $ordre);
+		return $this->render("pages/voyages.html.twig", [
+		   'visites' => $visites 
+		]);
+	}
 
     /**
      * @Route("/voyages/recherche/{champ}", name="voyages.findallequal")
