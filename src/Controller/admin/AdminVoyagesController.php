@@ -22,6 +22,7 @@ class AdminVoyagesController extends AbstractController{
      * @var VisiteRepository
      */
     private $repository;
+    private const ADMINVOYAGES = "admin.voyages";
 
     /**
      *
@@ -47,7 +48,7 @@ class AdminVoyagesController extends AbstractController{
     public function suppr(Visite $visite): Response{
         $this->om->remove($visite);
         $this->om->flush();
-        return $this->redirectToRoute('admin.voyages');
+        return $this->redirectToRoute(self::ADMINVOYAGES);
     }    
     
     /**
@@ -62,7 +63,7 @@ class AdminVoyagesController extends AbstractController{
         $formVisite->handleRequest($request);
         if($formVisite->isSubmitted() && $formVisite->isValid()){
             $this->om->flush();
-            return $this->redirectToRoute('admin.voyages');
+            return $this->redirectToRoute(self::ADMINVOYAGES);
         }
         
         return $this->render("admin/admin.voyage.edit.html.twig", [
@@ -84,7 +85,7 @@ class AdminVoyagesController extends AbstractController{
         if($formVisite->isSubmitted() && $formVisite->isValid()){
             $this->om->persist($visite);
             $this->om->flush();
-            return $this->redirectToRoute('admin.voyages');
+            return $this->redirectToRoute(self::ADMINVOYAGES);
         }
         
         return $this->render("admin/admin.voyage.ajout.html.twig", [
